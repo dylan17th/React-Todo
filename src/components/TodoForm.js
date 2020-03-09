@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './todoForm.css'
 
 class TodoForm extends React.Component {
     constructor(){
@@ -12,7 +13,7 @@ inputChange = e => {
     this.setState({
         item: e.target.value
     })}
-    
+
 submitHandler = e => {
     e.preventDefault();
     this.props.addTask(this.state.item)
@@ -25,9 +26,9 @@ submitHandler = e => {
         return(
             <div>
                 <form onSubmit={this.submitHandler}>
-                    <input name='todo' type='text' onChange={this.inputChange} value={this.state.item}/>
-                    <button>Add Todo</button>
-                    <button onClick={this.props.clearCompleted}>Clear Completed Task</button> 
+                    <input className='styled-input' name='todo' type='text' onChange={this.inputChange} value={this.state.item}/>
+                    <button className="styled-button">Add Todo</button>
+                    <button className="styled-button" onClick={this.props.clearCompleted}>Clear Completed Task</button> 
                 </form>
             </div>
         )
