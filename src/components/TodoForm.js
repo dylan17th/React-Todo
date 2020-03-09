@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 class TodoForm extends React.Component {
     constructor(){
     super();
@@ -8,10 +7,12 @@ class TodoForm extends React.Component {
         item: ''
     }
 }
+
 inputChange = e => {
     this.setState({
         item: e.target.value
     })}
+    
 submitHandler = e => {
     e.preventDefault();
     this.props.addTask(this.state.item)
@@ -26,7 +27,7 @@ submitHandler = e => {
                 <form onSubmit={this.submitHandler}>
                     <input name='todo' type='text' onChange={this.inputChange} value={this.state.item}/>
                     <button>Add Todo</button>
-                    <button>Clear Completed Task</button> 
+                    <button onClick={this.props.clearCompleted}>Clear Completed Task</button> 
                 </form>
             </div>
         )
