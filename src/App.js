@@ -3,24 +3,11 @@ import TodoForm from './components/TodoForm';
 import ToDoList from './components/TodoList';
 import './app.css';
 
-const toDoList = [
-    {
-      task: 'Organize Garage',
-      id: 1528817077286,
-      completed: false
-    },
-    {
-      task: 'Bake Cookies',
-      id: 1528817084358,
-      completed: false
-    }
-  ];
-
 class App extends React.Component {
   constructor(){
     super();
     this.state= {
-      toDoList: toDoList
+      toDoList: []
     }
   }
 
